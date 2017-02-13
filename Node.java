@@ -25,6 +25,11 @@ public class Node {
     return next;
   }
 
+  public int getLengthOfWord () {
+    int wordLength = word.length();
+    return wordLength;
+  }
+
   public int charValueOfFirstLetter () {
     int ascii = (int) word.charAt(0);
     return ascii;

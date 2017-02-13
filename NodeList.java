@@ -22,15 +22,17 @@ public class NodeList {
 
     for (Node curr = head; curr != null; curr = curr.getNext()) {
       if (curr.charValueOfFirstLetter() >= newNode.charValueOfFirstLetter()) {
-        if (curr == head) {
-          head = newNode;
+        if(curr.getLengthOfWord() > newNode.getLengthOfWord()){
+          if (curr == head) {
+            head = newNode;
+          }
+          else {
+            prev.setNext(newNode);
+          }
+          newNode.setNext(curr);
+          length ++;
+          return;
         }
-        else {
-          prev.setNext(newNode);
-        }
-        newNode.setNext(curr);
-        length ++;
-        return;
       }
       prev = curr;
     }
