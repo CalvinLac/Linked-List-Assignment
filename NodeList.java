@@ -8,8 +8,8 @@ public class NodeList {
     tail = null;
   }
 
-  public void addNode(int data) {
-    Node newNode = new Node(data);
+  public void addNodeStart(String inWord) {
+    Node newNode = new Node(inWord);
 
     if (head == null) {
       head = newNode;
@@ -20,8 +20,8 @@ public class NodeList {
 
     Node prev = null;
 
-    for (Node curr = head; curr != null; curr.getNext()) {
-      if (curr.getData() >= newNode.getData()) {
+    for (Node curr = head; curr != null; curr = curr.getNext()) {
+      if (curr.charValueOfFirstLetter() >= newNode.charValueOfFirstLetter()) {
         if (curr == head) {
           head = newNode;
         }
@@ -31,7 +31,7 @@ public class NodeList {
         newNode.setNext(curr);
         length ++;
         return;
-      } 
+      }
       prev = curr;
     }
     prev.setNext(newNode);
@@ -40,14 +40,14 @@ public class NodeList {
   
   }
 
-  public void remove (int data) {
+  public void remove (String word) {
     if (head == null)
       return;
 
     Node prev = null;
 
     for (Node curr = head; curr != null; curr.getNext()) {
-      if (curr.getData() == data) {
+      if (curr.getWord() == word) {
         if (curr == head) {
           head = curr.getNext();
         }
@@ -67,7 +67,7 @@ public class NodeList {
   public String display() {
     String string = "";
     for (Node curr = head; curr != null; curr = curr.getNext()) {
-      string = string + curr.getData() + "\n";
+      string = string + curr.getWord() + "\n";
     }
     return string;
   }

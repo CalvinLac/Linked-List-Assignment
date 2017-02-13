@@ -1,0 +1,7 @@
+have a read input and put into data structure and insert as node
+
+figure out which nodes are anagrams
+
+if anagram, insert into another linked list going horizontally
+
+sort the horizontal linked list

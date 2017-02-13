@@ -1,24 +1,20 @@
 public class Node {
 
-  private int data;
+  private String word;
   private Node next;
 
 
-  public Node(int data) {
-    this.data = data;
+  public Node (String inWord) {
+    this.word = inWord;
     next = null;
   }
 
   public Node() {
-    this(0);
+    this("");
   }
 
-  public int getData() {
-    return data;
-  }
-
-  public void setData(int data) {
-    this.data = data;
+  public String getWord() {
+    return word;
   }
 
   public void setNext(Node nextNode) {
@@ -27,5 +23,10 @@ public class Node {
 
   public Node getNext() {
     return next;
+  }
+
+  public int charValueOfFirstLetter () {
+    int ascii = (int) word.charAt(0);
+    return ascii;
   }
 }
